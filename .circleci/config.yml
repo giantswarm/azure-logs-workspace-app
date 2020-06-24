@@ -1,11 +1,12 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@0.8.5
+  architect: giantswarm/architect@0.8.8
 
 workflows:
   package-and-push-chart-on-tag:
     jobs:
       - architect/push-to-app-catalog:
+          context: architect
           name: "package and push azure-logs-workspace-app chart"
           app_catalog: "giantswarm-azure-test-catalog"
           app_catalog_test: "giantswarm-azure-test-catalog"
