@@ -12,4 +12,3 @@ dependencies:
   version: "0.5.1"
   repository: "https://github.com/giantswarm/giantswarm-playground-catalog"
 version: [[ .Version ]]
-
