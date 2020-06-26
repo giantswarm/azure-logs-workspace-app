@@ -7,6 +7,6 @@ Here we define the azure-logs-workspace-app chart with its templates and default
 
 ## Credit
 
-* https://github.com/giantswarm/azure-logs-workspace-app
+* https://docs.microsoft.com/en-us/azure/azure-monitor/
 * https://github.com/giantswarm/fluent-logshipping-app/
 * https://github.com/giantswarm/azure-tools-operator
