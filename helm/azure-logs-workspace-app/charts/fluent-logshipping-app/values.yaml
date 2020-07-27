@@ -1,0 +1,98 @@
+# Default values for fluent-logshipping-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: kube-system
+
+# clusterID is dynamic environment value, calculated after cluster creation
+# applies only to Giant Swarm clusters
+clusterID: clusterID
+
+image:
+  registry: quay.io
+
+fluentbit:
+  name: fluent-bit
+  port: 5170
+  protocol: TCP
+
+  # For systemd sshd logs it needs root
+  userID: 0
+  # For systemd sshd logs it needs root
+  groupID: 0
+
+  image:
+    name: giantswarm/fluent-bit
+    tag: 1.4.5
+
+  logLevel: info
+  flushFrequencyInSeconds: 5
+
+fluentd:
+  replicas: 2
+  name: fluentd
+  port: 24224
+  protocol: TCP
+
+  logLevel: info
+
+  image:
+    name: giantswarm/fluentd
+    tag: 1.10.2
+
+  aws:
+    kiam: false
+    cloudWatch:
+      enabled: false
+      region: ""
+      logGroupName: "my-cluster"
+      logStreamName: "example-stream"
+    S3:
+      enabled: false
+      bucketName: "my-cluster-logs"
+      bucketRegion: ""
+      bucketPathPrefix: "gs-"
+      account: "00000000000"
+      role: "my-role"
+      grant_full_control: ""
+      s3_object_key_format: "%{path}%{time_slice}_%{index}.%{file_extension}"
+  azure:
+    logAnalytics:
+      enabled: false
+      workspaceId: ""
+      sharedKey: ""
+      customLogs:
+        audit:
+          ssh:
+            name: SshAuditLogs
+          kubernetes:
+            name: KubernetesAuditLogs
+        containers:
+          name: KubernetesContainerLogs
+        syslog:
+          name: KubernetesSyslog
+
+  elasticsearch:
+    enabled: false
+    host: ""
+    port: 9200
+    path: "/"
+    tlsEnabled: true
+    sslVerify: true
+    secured: false
+    user: ""
+    password: ""
+    indices:
+      audit:
+        ssh:
+          name: audit-ssh
+        kubernetes:
+          name: audit-kubernetes
+      containers:
+        name: kubernetes
+      syslog:
+        name: syslog
+
+giantswarm:
+  monitoring:
+    enabled: true
