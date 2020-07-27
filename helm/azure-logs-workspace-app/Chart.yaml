@@ -12,5 +12,5 @@ sources:
 dependencies:
 - name: fluent-logshipping-app
   version: "0.5.1"
-  repository: "file://../fluent-logshipping-app"
+  repository: "file://../"
 version: [[ .Version ]]
