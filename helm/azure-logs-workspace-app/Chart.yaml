@@ -12,5 +12,5 @@ sources:
 dependencies:
 - name: fluent-logshipping-app
   version: "0.5.1"
-  repository: "file://../"
+  repository: "https://giantswarm.github.com/giantswarm-playground-catalog"
 version: [[ .Version ]]
