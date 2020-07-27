@@ -7,7 +7,7 @@ engine: gotpl
 icon: https://raw.githubusercontent.com/giantswarm/azure-logs-workspace-app/master/log-workspace-app.png
 sources:
 - https://github.com/giantswarm/azure-logs-workspace-app
-- https://github.com/giantswarm/fluent-logshipping-app/
+- https://github.com/giantswarm/fluent-logshipping-app
 - https://github.com/giantswarm/azure-tools-operator
 dependencies:
 - name: fluent-logshipping-app
