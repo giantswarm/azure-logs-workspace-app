@@ -1,1 +1,5 @@
-
+fluent-logshipping-app:
+  fluentd:
+    azure:
+      logAnalytics:
+        enabled: true
