@@ -1,7 +1,6 @@
-fluent-logshipping-app:
-  fluentd:
-    azure:
-      logAnalytics:
-        enabled: true
-        workspaceId: workspace
-        sharedKey: primarykey
+fluentd:
+  azure:
+    logAnalytics:
+      enabled: true
+      workspaceId: workspace
+      sharedKey: primarykey
