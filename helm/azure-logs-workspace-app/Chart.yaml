@@ -9,8 +9,4 @@ sources:
 - https://github.com/giantswarm/azure-logs-workspace-app
 - https://github.com/giantswarm/fluent-logshipping-app/
 - https://github.com/giantswarm/azure-tools-operator
-dependencies:
-- name: fluent-logshipping-app
-  version: "0.5.1"
-  repository: "https://github.com/giantswarm/giantswarm-playground-catalog"
 version: [[ .Version ]]

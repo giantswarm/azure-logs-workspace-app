@@ -1,0 +1,6 @@
+dependencies:
+- name: fluent-logshipping-app
+  repository: https://giantswarm.github.io/giantswarm-playground-catalog/
+  version: 0.5.2
+digest: sha256:03ac9b79dc9bc63df8299565b5c7e3fd4db9158f8ae2f227b23d11ba3f4b83b9
+generated: "2020-08-24T14:25:48.29907407+02:00"
