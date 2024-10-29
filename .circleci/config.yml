@@ -5,13 +5,17 @@ orbs:
 workflows:
   package-and-push-chart-on-tag:
     jobs:
-      - architect/push-to-app-catalog:
-          context: architect
-          name: "package and push azure-logs-workspace-app chart"
-          app_catalog: "giantswarm-azure-catalog"
-          app_catalog_test: "giantswarm-azure-test-catalog"
-          chart: "azure-logs-workspace-app"
+    - architect/push-to-app-catalog:
+        context: architect
+        name: package and push azure-logs-workspace-app chart
+        app_catalog: giantswarm-azure-catalog
+        app_catalog_test: giantswarm-azure-test-catalog
+        chart: azure-logs-workspace-app
           # Trigger job on git tag.
-          filters:
-            tags:
-              only: /^v.*/
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore:
+            - main
+            - master
